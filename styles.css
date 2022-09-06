@@ -1,0 +1,166 @@
+/* spotlight color #f18119 
+    main text #404040
+    white text #fff
+    gradient bar #FF713B - #FFA51D
+
+    Font family - Source Sans
+    font-family: 'Source Sans 3', sans-serif;
+
+    h1: 2.25rem or 3.5rem
+    h2: 1.3125rem or 1.75rem
+    body: 1rem or 1.125rem
+    small: .0625rem
+
+    font weights 900 or 400
+    */
+
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #404040;
+    font-weight: 400;
+    text-align: center;
+
+}
+img {
+    max-width: 100%;
+}
+/* typography */
+/* --------------- */
+h1{
+    font-weight: 300;
+    font-size: 2.25rem;
+    color: #fff;
+}
+.h1-highlight{
+    font-weight: 900;
+}
+h2{
+    font-size: 1.3125rem;
+    margin: 0;
+}
+.tagline{
+    font-size: .625rem;
+}
+.tagline,
+.subtitle{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #F18119;
+    font-weight: 900;
+}
+.header-tagline p{
+    line-height: .5;
+}
+
+.smalltext{
+    font-size: .625rem;
+    letter-spacing: 1px;
+}
+p{
+    line-height: 1.6;
+}
+
+/* layout */
+/* --------------- */
+header{
+    background-image: url(images/dark-ribs.jpg);
+    background-color: #404040;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* ensure a decent height */
+    min-height: 50vh;
+    /* push the tagline to the top and subtitle to the bottom
+    with the main title in the center */
+    justify-content: space-between;
+    padding: 0 .25em 1em;
+}
+.subtitle{
+    margin: 0;
+}
+.container{
+    /* max-width: 80%; */
+    margin: 0 auto;
+    padding: 2em 1em;
+
+}
+.header-tagline{
+    order: -1;
+}
+.tagline{
+    border-top: 10px solid #F18119;
+    border-image: linear-gradient(to left, #FF713B,#FFA51D) 60;
+    padding-top: .5rem;
+    
+}
+.h1-highlight{
+    /* force the highlight text onto its own line */
+    display: block;
+}
+
+.form-intro .subtitle{
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 70%; */
+}
+button{
+    background: linear-gradient(to left, #FF713B,#FFA51D);
+    padding: 1em 5em;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: .625rem;
+    border-radius: 8px;
+}
+input{
+    font-size: 1.3125rem;
+    margin-bottom: 1em;
+}
+
+@media (min-width: 750px) {
+    body{
+        display: flex;
+        font-size: 1.125rem;
+    }
+    header, 
+    main{
+        /* flex: 1 1 50%; */
+        min-height: 100vh;
+        width: 50%;
+    }
+    .header-tagline{
+    position: relative;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    }
+    header{
+        justify-content: start;
+    }
+    h1{
+        margin-top: 25%;
+        margin-bottom: 0;
+        font-size: 3.5rem;
+    }
+    h2{
+        font-size: 1.75rem;
+    }
+    main{
+        justify-content: center;
+    }
+
+}
