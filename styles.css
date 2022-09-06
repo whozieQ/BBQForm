@@ -25,9 +25,8 @@ body{
     text-align: center;
 
 }
-img {
-    max-width: 100%;
-}
+
+/* --------------- */
 /* typography */
 /* --------------- */
 h1{
@@ -40,7 +39,6 @@ h1{
 }
 h2{
     font-size: 1.3125rem;
-    margin: 0;
 }
 .tagline{
     font-size: .625rem;
@@ -52,18 +50,13 @@ h2{
     color: #F18119;
     font-weight: 900;
 }
-.header-tagline p{
-    line-height: .5;
-}
-
 .smalltext{
     font-size: .625rem;
     letter-spacing: 1px;
 }
-p{
-    line-height: 1.6;
-}
 
+
+/* --------------- */
 /* layout */
 /* --------------- */
 header{
@@ -71,25 +64,34 @@ header{
     background-color: #404040;
     background-position: center;
     background-size: cover;
-
+}
+/* on small screens content displays in 1 column
+each row taking half the viewport height */
+header .container{
     display: flex;
     flex-direction: column;
     text-align: center;
     /* ensure a decent height */
     min-height: 50vh;
+    /* take up the full height of the parent container */
+    height: 100%;
     /* push the tagline to the top and subtitle to the bottom
     with the main title in the center */
     justify-content: space-between;
-    padding: 0 .25em 1em;
 }
-.subtitle{
-    margin: 0;
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+main .container{
+    padding: 0 2rem;
 }
 .container{
-    /* max-width: 80%; */
     margin: 0 auto;
-    padding: 2em 1em;
-
+    max-width: 550px;
 }
 .header-tagline{
     order: -1;
@@ -131,36 +133,29 @@ input{
 }
 
 @media (min-width: 750px) {
+    /* on large screens switch to 2 columns */
     body{
         display: flex;
+        flex-direction: row;
         font-size: 1.125rem;
     }
+    /* each column is same size
+    and fills the viewport in height */
     header, 
     main{
-        /* flex: 1 1 50%; */
         min-height: 100vh;
         width: 50%;
     }
-    .header-tagline{
-    position: relative;
-    margin: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    }
-    header{
-        justify-content: start;
-    }
+
+
     h1{
-        margin-top: 25%;
+
         margin-bottom: 0;
         font-size: 3.5rem;
     }
     h2{
         font-size: 1.75rem;
     }
-    main{
-        justify-content: center;
-    }
+
 
 }
