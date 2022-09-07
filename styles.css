@@ -60,10 +60,11 @@ h2{
 /* layout */
 /* --------------- */
 header{
-    background-image: url(images/dark-ribs.jpg);
+    background-image: url(images/ribs.jpg);
     background-color: #404040;
     background-position: center;
     background-size: cover;
+    background-blend-mode: multiply;
 }
 /* on small screens content displays in 1 column
 each row taking half the viewport height */
@@ -97,10 +98,14 @@ main .container{
     order: -1;
 }
 .tagline{
-    border-top: 10px solid #F18119;
-    border-image: linear-gradient(to left, #FF713B,#FFA51D) 60;
-    padding-top: .5rem;
+    border-top: 5px solid #F18119;
+    border-image: linear-gradient(to left, #FF713B,#FFA51D) 1;
+    padding-top: 2px;
+    margin: 0;
     
+}
+.header-tagline *{
+    margin: 0;
 }
 .h1-highlight{
     /* force the highlight text onto its own line */
@@ -116,20 +121,44 @@ main .container{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* max-width: 70%; */
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 button{
     background: linear-gradient(to left, #FF713B,#FFA51D);
-    padding: 1em 5em;
+    padding: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+
     color: #fff;
     font-weight: 900;
     text-transform: uppercase;
     font-size: .625rem;
-    border-radius: 8px;
+    letter-spacing: 1px;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+button:hover,
+button:focus{
+    transform: scale(1.1);
 }
 input{
+    font-family: inherit;
+    text-align: inherit;
     font-size: 1.3125rem;
-    margin-bottom: 1em;
+    margin-bottom: .75em;
+    border-radius: 8px;
+    border: #404040 1px solid;
+    padding: .25em;
+    width: 100%;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+input:focus{
+    transform: scale(1.1);
 }
 
 @media (min-width: 750px) {
